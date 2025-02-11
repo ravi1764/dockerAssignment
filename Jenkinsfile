@@ -21,7 +21,7 @@ pipeline {
         stage('Create Docker image'){
           steps{
             echo "Creating Docker image"
-            sh "sudo docker build -t docker_Assignment_deploy ."
+            sh "sudo docker build -t docker_assignment_deploy ."
           }
         }
  
@@ -31,9 +31,9 @@ pipeline {
  
             // Run the image. NOTE: mysql container should be running.
                   // before running, stop and remove the previously started container for this application.
-                  sh 'sudo docker stop docker_Assignment_deploy || true'
-                  sh 'sudo docker rm docker_Assignment_deploy || true'
-            sh "sudo docker run --name docker_Assignment_deploy -d -p 9291:9291 docker_Assignment_deploy"
+                  sh 'sudo docker stop docker_assignment_deploy || true'
+                  sh 'sudo docker rm docker_assignment_deploy || true'
+            sh "sudo docker run --name docker_assignment_deploy -d -p 9291:9291 docker_assignment_deploy"
             echo "deployed successfully"
           }
         }
